@@ -14,6 +14,8 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/services/script.js"></script>
+    <script src="/js/controllers/video.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +24,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body ng-controller="HomeCtrl">
+  <body ng-controller="VideoCtrl">
     <h1>Subtvtle {{1+1}} {{message}}<h1>
     <div class="container">
       <div class="row">
@@ -30,12 +32,12 @@
           <div class="subtitles text-center">
             <div class="row">
               <div class="col-xs-12">
-                  <span id="line1">hello, my good sirs.</span>
+                  <span id="line1">{{script[0].line1}}</span>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12">
-                  <span id="line2">hello, my good sirs.</span>
+                  <span id="line2">{{script[0].line2}}</span>
               </div>
             </div>
           </div>
@@ -60,6 +62,5 @@
     <script src="subtitles/primer-en.js"></script>
     -->
     <script src="/js/downfall.js"></script>
-    <script src="/js/main.js"></script>
   </body>
 </html>
