@@ -10,7 +10,7 @@ app.controller('VideoCtrl', ['$scope', '$element', '$interval', 'ScriptService',
   $scope.currentTime = 0;
   
   // constantly poll the video for it's current time.
-  $interval(displaySubtitle, 500);
+  $interval(displaySubtitle, 100);
   
   function displaySubtitle(time) {
     $scope.currentTime = video.currentTime;
