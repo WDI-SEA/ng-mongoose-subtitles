@@ -1,3 +1,9 @@
+body, html {
+  margin: 0;
+  overflow: hidden;
+  height:100%;
+}
+
 body {
   background-color: black;
 }
@@ -24,4 +30,20 @@ and be placed at the bottom of the movie.
 
 input {
   width: 100%;
+}
+
+.tall {
+  height: 100%;
+}
+
+#video-container {
+  position: relative;
+}
+
+#captions {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
 }
