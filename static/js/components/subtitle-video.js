@@ -12,8 +12,13 @@
       var script = ScriptService.getScript(0);
       
       // start the currentTime at zero.
+      $scope.editing = false;
       $scope.currentTime = 0;
       $scope.script = script;
+      
+      $scope.save = function() {
+        ScriptService.saveScript(0, script);
+      }
       
       // constantly poll the video for it's current time.
       $interval(displaySubtitle, 100);

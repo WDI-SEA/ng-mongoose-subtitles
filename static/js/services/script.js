@@ -10,4 +10,8 @@ app.service('ScriptService', ['$http', function($http) {
   this.getScript = function(id) {
      return SUBTITLES;
   };
+  
+  this.saveScript = function(id, data) {
+    console.log("ScriptService saving", id, data);
+  };
 }]);
