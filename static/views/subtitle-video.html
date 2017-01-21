@@ -1,0 +1,32 @@
+<div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="subtitles text-center">
+        <div class="row">
+          <div class="col-xs-12">
+              <span id="line1">{{subtitle.line1}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+              <span id="line2">{{subtitle.line2}}</span>
+          </div>
+        </div>
+      </div>
+      <video src="video/Downfall.mkv" controls autoplay></video>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <span id="time">{{currentTime}}</span>
+    </div>
+  </div>
+  
+  <div class="row" ng-repeat="caption in script">
+    <div class="col-xs-12">
+      <input ng-model="caption.line1" />
+      <input ng-model="caption.line2" />
+    </div>
+    <hr />
+  </div>
+</div>
