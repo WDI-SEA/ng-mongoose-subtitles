@@ -21,3 +21,7 @@ and be placed at the bottom of the movie.
   font-size: 24pt;
   padding-bottom: 60px;
 }
+
+input {
+  width: 100%;
+}

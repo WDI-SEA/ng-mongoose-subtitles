@@ -3,7 +3,9 @@
     <div class="col-xs-12">
       <div class="row">
         <div class="col-xs-6">
-          <span id="time">{{currentTime}}</span>
+          <p>
+            <span id="time">{{currentTime}}</span>
+          </p>
         </div>
         <div class="col-xs-6 text-right">
           <button ng-show="editing" ng-click="save()">save</button>
@@ -32,8 +34,8 @@
     <div class="col-xs-4" ng-show="editing">
       <div ng-repeat="caption in script">
         <p>
-          <input ng-model="caption.line1" size="45"/> <br />
-          <input ng-model="caption.line2" size="45"/>
+          <input ng-model="caption.line1" /> <br />
+          <input ng-model="caption.line2" />
         <p>
         <hr />
       </div>
