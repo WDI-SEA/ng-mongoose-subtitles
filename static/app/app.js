@@ -17,11 +17,11 @@ angular.module('App', ['ui.router'])
       component: 'homeComp'
     })
     .state('watchState', {
-      url: '/watch',
+      url: '/watch/:id',
       component: 'watchComp'
     })
     .state('editState', {
-      url: '/edit',
+      url: '/edit/:id',
       component: 'editComp'
     })
     .state('creditState', {

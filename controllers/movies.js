@@ -15,7 +15,7 @@ router.route('/')
     subtitles.forEach(function(subtitle){
       subtitlesList.push({
         title: subtitle.title,
-        id: subtitle._id
+        _id: subtitle._id
       });
     });
 
