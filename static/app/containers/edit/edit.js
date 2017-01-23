@@ -1,6 +1,6 @@
 angular.module('App')
 .component('editComp', {
-  templateUrl: 'app/containers/edit/edit.html',
+  templateUrl: 'app/containers/watch/watch.html',
   controller: EditCompCtrl,
   controllerAs: 'editComp'
 });

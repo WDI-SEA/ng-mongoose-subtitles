@@ -5,13 +5,14 @@ angular.module('App')
   controllerAs: 'videoComp'
 });
 
-function VideoCompCtrl($element, $interval, $stateParams, ScriptService){
+function VideoCompCtrl($element, $interval, $state, $stateParams, ScriptService){
   var videoComp = this;
+  
+  videoComp.editing = $state.current.name === "editState";
   
   // GET THE SUBTITLES
   videoComp.script = [];
   ScriptService.getScript($stateParams.id).then(function(script) {
-    console.log("SCRIPT", script);
     videoComp.script = script;
   });
 
@@ -25,7 +26,6 @@ function VideoCompCtrl($element, $interval, $stateParams, ScriptService){
   videoComp.subtitle = {};
   
   videoComp.save = function() {
-    console.log("script:", videoComp.script);
     ScriptService.editScript(videoComp.script);
   };
 
@@ -78,4 +78,4 @@ function VideoCompCtrl($element, $interval, $stateParams, ScriptService){
 
 }
 
-VideoCompCtrl.$inject = ['$element', '$interval', '$stateParams', 'ScriptService'];
+VideoCompCtrl.$inject = ['$element', '$interval', '$state', '$stateParams', 'ScriptService'];
