@@ -40,8 +40,12 @@ router.route('/script/:id')
 router.route('/create/script/:templateId')
 .post(function(req, res) {
 
-})
+});
 
 // PUT /movie/edit/script/:index
+router.route('/edit/script/:index')
+.put(function(req, res) {
+
+});
 
 module.exports = router;
