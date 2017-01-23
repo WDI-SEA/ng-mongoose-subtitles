@@ -1,10 +1,11 @@
-body{
+body {
   padding-top: 70px;
   background-color: rgb(120,120,120);
   color: white;
+  margin: 0 25px;
 }
 
-.container{
+.container {
   width: 100%
 }
 .container video {
@@ -23,15 +24,26 @@ body{
   padding-bottom: 3vmin;
 }
 
-.line1Box, .line2Box{
+.line1Box, .line2Box {
   word-break: break-all;
 }
 
-.subtitle-edit-container{
-  height: 100vmin;
+.subtitle-edit-container {
+  height: 76vmin;
   overflow-y: scroll;
   overflow-x: hidden;
   padding-right: 6px;
+  padding: 14px;
+  background-color: #333;
+}
+
+.inner-shadow {
+  width: 90%;
+  height: 5%;
+  position: absolute;
+  bottom: 0px;
+  box-shadow: inset 0 -40px 40px -40px #000000;
+  z-index: 1;
 }
 
 input[name=line1] {
@@ -43,19 +55,101 @@ input[name=line1] {
   font-size: 15px;
 }
 
+.navbar-fixed-top {
+  padding-left: 25px;
+}
+
 .navbar a {
   transition-property: color;
   transition-duration: 300ms;
 }
+
+.navbar-header {
+  padding-bottom: 10px;
+}
+
+#navbar-collapse-div {
+  padding-top: 6px;
+}
+
+#brand-logo {
+  width: 110px;
+}
+
+
+/*** HOMEPAGE STYLING ***/
+
+#script-links {
+  width: 500px;
+  max-width: 84%;
+}
+
+.scripts-hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: #555;
+  height: 1px;
+  margin: 20px 0 0 0;
+}
+
+.hr-thick {
+  margin-bottom: 10px;
+  height: 3px;
+}
+
+.scripts-list {
+  margin-top: -10px;
+  padding-top: 0;
+  transition-property: background-color;
+  transition-duration: 300ms;
+}
+
+.scripts-list:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+.script-link {
+  margin: 0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.fa-arrow-circle-right {
+  margin: 3px 25px 0 0;
+  transition-property: transform;
+  transition-duration: 300ms;
+}
+
+.scripts-list:hover .fa-arrow-circle-right {
+  transform: translate(10px,0);
+}
+
+#script-links ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+#script-links li {
+  list-style: none;
+  cursor: pointer;
+  padding-left: 25px;
+}
+
 
 @media (max-width: 992px){
   .subtitle-edit-container{
     height: 50vh;
     overflow: scroll;
   }
-
 }
 
-.home-page-links .link a {
+#script-links a {
   color: white;
+  text-decoration: none;
 }
