@@ -39,7 +39,7 @@ router.route('/script/:id')
 // POST /movie/create/script/:templateId
 router.route('/create/script/:templateId')
 .post(function(req, res) {
-
+  
 });
 
 // PUT /movie/edit/script/:index
