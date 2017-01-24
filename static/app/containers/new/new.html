@@ -1,0 +1,17 @@
+<div>
+    <form class="form-group" ng-submit="newComp.submit()">
+        <label for="Title">Title:
+            <input type="text" class="form-control" name="title" ng-model="newComp.add.title">
+        </label>
+        <label for="Template">Template:
+            <select class="form-control" ng-model="newComp.add.id">
+            <option ng-repeat="script in newComp.scripts" value="{{script._id}}">
+                {{script.title}}
+            </option>
+
+            </select>
+        </label>
+        <input type="submit" class="btn btn-success" name="" value="Create">
+        <!-- <button class="btn btn-success" ng-submit="newComp.submit()">Create</button> -->
+    </form>
+</div>

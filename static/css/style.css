@@ -29,7 +29,7 @@ body {
 }
 
 .subtitle-edit-container {
-  height: 76vmin;
+  height: 85vmin;
   overflow-y: scroll;
   overflow-x: hidden;
   padding-right: 6px;
@@ -74,6 +74,77 @@ input[name=line1] {
 
 #brand-logo {
   width: 110px;
+}
+
+/*** VIDEO STYLING ***/
+
+#video-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#edit-buttons {
+  padding-bottom: 15px;
+  display: flex;
+}
+
+#edit-buttons form {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: none;
+  margin-left: 10px;
+}
+
+#edit-buttons button, #edit-buttons input {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: none;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  outline: none;
+  letter-spacing: 1px;
+}
+
+#edit-buttons button {
+  background-color: #787878;
+  color: black;
+  border: 2px solid black;
+  transition-property: border, color;
+  transition-duration: 600ms;
+}
+
+#edit-buttons button:hover {
+  border: 2px solid #ddd;
+  color: #ddd;
+}
+
+#edit-buttons input {
+  background-color: #222;
+  padding: 7px 11px;
+  color: white;
+  transition-property: background-color;
+  transition-duration: 300ms;
+}
+
+#edit-buttons input:hover  {
+  background-color: #444;
+}
+
+#edit-buttons i {
+  margin-right: 5px;
+}
+
+.video-shadow:before, .video-shadow:after {
+  position: absolute;
+  content: "";
+  top:110px; bottom:5px; left:60px; right:60px;
+  z-index: -1;
+  box-shadow: 0 0 40px 20px rgba(0,0,0,.4);
+  border-radius: 100px/20px; 
 }
 
 

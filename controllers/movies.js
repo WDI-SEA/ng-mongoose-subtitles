@@ -39,16 +39,34 @@ router.route('/script/:id')
 
 });
 
-// POST /movie/create/script/:templateId
-router.route('/create/script/:templateId')
-.post(function(req, res) {
-  console.log("POST test");
-  // models.Subtitle.findById(req.params.templateId, function(err, subtitle) {
-  //   res.send(subtitle);
-  // });
+// PUT /movie/create/script/:templateId
+router.route('/edit/script/:id')
+.put(function(req, res) {
+
+  models.Subtitle.findOne(
+    {"_id": req.params.id},
+    function(err, entry){
+      if(err){
+        console.log("error: ", err);
+      } else{
+        entry.subtitles = req.body.script.subtitles;
+        entry.save();
+      }
+    }
+  );
+
 });
 
-// PUT /movie/edit/script/:index
+// PUT /movie/new/script/:templateId
+router.route('/new/script')
+.put(function(req, res) {
 
+  models.Subtitle.create({
+    title: req.body.script.title,
+    subtitles: req.body.script.subtitles
+  },function(err, subtitle) {
+    console.log("error: ", err);
+  });
+});
 
 module.exports = router;

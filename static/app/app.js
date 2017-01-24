@@ -18,15 +18,19 @@ angular.module('App', ['ui.router'])
     })
     .state('watchState', {
       url: '/watch/:id',
-      component: 'watchComp'
+      component: 'videoComp'
     })
     .state('editState', {
       url: '/edit/:id',
-      component: 'editComp'
+      component: 'videoComp'
     })
     .state('creditState', {
       url: '/credit',
       component: 'creditComp'
+    })
+    .state('newState', {
+        url: '/new',
+        component: 'newComp'
     });
 
     //Removes # symbol for our routes

@@ -7,9 +7,9 @@ angular.module('App')
 
 function VideoCompCtrl($element, $interval, $state, $stateParams, ScriptService){
   var videoComp = this;
-  
+
   videoComp.editing = $state.current.name === "editState";
-  
+
   // GET THE SUBTITLES
   videoComp.script = [];
   ScriptService.getScript($stateParams.id).then(function(script) {
@@ -24,9 +24,13 @@ function VideoCompCtrl($element, $interval, $state, $stateParams, ScriptService)
 
   videoComp.currentTime = 0;
   videoComp.subtitle = {};
-  
+
   videoComp.save = function() {
     ScriptService.editScript(videoComp.script);
+  };
+
+  videoComp.saveAs = function() {
+    ScriptService.newScript(videoComp.script);
   };
 
   function displaySubtitle() {

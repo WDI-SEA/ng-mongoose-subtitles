@@ -61,3 +61,7 @@ function timestampsToSeconds(timestamp) {
 
   return mm / 1000 + seconds + minutes * 60 + hours * 3600;
 }
+
+$("#edit-video").click(function() {
+  alert("holla");
+});
