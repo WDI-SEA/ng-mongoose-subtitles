@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-8" ng-class="{'col-md-offset-2': !videoComp.editing}">
 
+      <!-- Video Header -->
       <div id="video-header">
         <h1>{{videoComp.script.title}}</h1>
         <div id="edit-buttons">
@@ -10,17 +11,10 @@
             Edit
           </button>
 
-          <button ng-click="videoComp.editing = !videoComp.editing" ng-show="videoComp.editing" id="edit-video">
-            <i class="fa fa-ban" aria-hidden="true"></i>
-            Cancel
-          </button>
-
-          <form class="form-control" ng-show="videoComp.editing" ng-submit="videoComp.save()" id="edit-submit">
-            <input type="submit" value="Submit">
-          </form>
-
         </div>
       </div>
+
+      <!-- Video Player -->
       <div class="subtitles text-center">
           <div class="row">
               <div class="col-xs-12 line1Box">
@@ -38,18 +32,28 @@
       </div>
   </div>
 
+  <!-- Edits Column -->
   <div ng-show="videoComp.editing" class="col-md-4" id="subtitles-col">
-    <div class="inner-shadow"></div>
-    <form class="form-control" ng-submit="videoComp.save()">
-      <label>Save</label>
-      <input type="submit" value="Submit">
-    </form>
 
-    <input style="color: black" type="Text" placeholder="New title" ng-model="videoComp.script.title"/>
-    <button style="color: black" ng-click="videoComp.saveAs()">Save As</button>
-    
-    <br/>
+    <div id="edits-header">
+      <h3>Edit Video</h3>
+      <button ng-click="videoComp.editing = !videoComp.editing" ng-show="videoComp.editing" id="close-edit">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div id="edits-controls">
+      <label>Title:</label>
+      <input type="text" placeholder="New title" id="edit-title" ng-model="videoComp.script.title"/>
+      <button ng-click="videoComp.saveAs()" id="save-title-btn">Save As</button>
+
+      <form class="form-control" ng-submit="videoComp.save()">
+        <input type="submit" value="Save All Changes" id="save-changes-btn">
+      </form>
+    </div>
+
     <div class="subtitle-edit-container">
+    <div class="inner-shadow"></div>
       <div class="row" ng-repeat="subtitle in videoComp.script.subtitles">
         <div class="col-xs-12">
           <div class="panel panel-default">

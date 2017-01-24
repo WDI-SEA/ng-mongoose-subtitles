@@ -6,8 +6,11 @@ body {
 }
 
 h1 {
-  font-size: 42px;
   margin-left: -2px;
+}
+
+label {
+  letter-spacing: 0.06em;
 }
 
 .container {
@@ -34,7 +37,7 @@ h1 {
 }
 
 .subtitle-edit-container {
-  height: 85vmin;
+  height: 69vmin;
   overflow-y: scroll;
   overflow-x: hidden;
   padding-right: 6px;
@@ -46,7 +49,7 @@ h1 {
   width: 90%;
   height: 5%;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   box-shadow: inset 0 -40px 40px -40px #000000;
   z-index: 1;
 }
@@ -62,7 +65,7 @@ input[name=line1] {
 
 .navbar-fixed-top {
   padding-left: 25px;
-  box-shadow: inset 0 -9px 20px -7px rgba(0, 0, 0, 1);
+  box-shadow: inset 0 -9px 25px -7px rgba(0, 0, 0, 1);
 }
 
 .navbar a {
@@ -86,7 +89,7 @@ input[name=line1] {
   width: 100px;
 }
 
-/*** VIDEO STYLING ***/
+/*** VIDEO WATCH/EDIT STYLING ***/
 
 #video-header {
   display: flex;
@@ -120,16 +123,14 @@ input[name=line1] {
 }
 
 #edit-buttons button {
-  background-color: #787878;
-  color: black;
-  border: 2px solid black;
-  transition-property: border, color;
-  transition-duration: 600ms;
+  background-color: #FAFAFA;
+  color: #5A5A5A;
+  transition-property: background-color;
+  transition-duration: 300ms;
 }
 
 #edit-buttons button:hover {
-  border: 2px solid #ddd;
-  color: #ddd;
+  background-color: #ddd;
 }
 
 #edit-buttons input {
@@ -155,6 +156,82 @@ input[name=line1] {
   z-index: -1;
   box-shadow: 0 0 40px 20px rgba(0,0,0,.4);
   border-radius: 100px/20px; 
+}
+
+#subtitles-col h3 {
+  margin-top: 30px;
+}
+
+#edits-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#edits-controls {
+  background-color: #131313;
+  padding: 15px;
+  margin: 2px 0 -7px 0;
+}
+
+button#close-edit {
+  background: none;
+  padding: 0;
+  border: none;
+  font-size: 30px;
+  margin-bottom: 4px;
+  color: white;
+  outline: none;
+  transition-property: color;
+  transition-duration: 300ms;
+}
+
+button#close-edit:hover {
+  color: #ddd;
+}
+
+#edit-title {
+  background: none;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  margin: 0 7px 20px 3px;
+}
+
+#edits-controls form {
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+#save-title-btn {
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-weight: 500;
+  outline: none;
+  color: white;
+  background-color: #333333;
+  transition-property: background-color;
+  transition-duration: 300ms;
+}
+
+#save-title-btn:hover {
+  background-color: #444;
+}
+
+#save-changes-btn {
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  outline: none;
+  letter-spacing: 1px;
+  color: #333333;
 }
 
 
