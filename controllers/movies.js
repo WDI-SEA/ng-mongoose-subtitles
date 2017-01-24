@@ -39,7 +39,25 @@ router.route('/script/:id')
 
 });
 
-// PUT /movie/create/script/:templateId
+// POST /movie/create/script/:templateId
+router.route('/create/script/:templateId')
+.post(function(req, res) {
+  models.Subtitle.findById(req.params.templateId, function(err, subtitle) {
+    if (err) {
+      console.log("error: ", err);
+    } else {
+      models.Subtitle.create({
+        title: req.body.title,
+        subtitles: subtitle.subtitles
+      }, function(err, createdSubtitle) {
+        console.log(createdSubtitle);
+        res.redirect("/movie/edit/script/" + createdSubtitle._id);
+      })
+    }
+  })
+})
+
+// PUT /movie/edit/script/:templateId
 router.route('/edit/script/:id')
 .put(function(req, res) {
 

@@ -35,7 +35,9 @@ function ScriptService($http) {
 	    var req = {
 	      url: '/movie/create/script/' + templateId,
 	      method: 'POST',
-		  data: title
+			  data: {
+					title: title
+				}
 	  };
 	    return $http(req);
 	  },
