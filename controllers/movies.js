@@ -50,8 +50,7 @@ router.route('/create/script/:templateId')
         title: req.body.title,
         subtitles: subtitle.subtitles
       }, function(err, createdSubtitle) {
-        console.log(createdSubtitle);
-        res.redirect("/movie/edit/script/" + createdSubtitle._id);
+        res.send(createdSubtitle);
       })
     }
   })

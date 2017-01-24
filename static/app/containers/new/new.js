@@ -16,7 +16,10 @@ function NewCompCtrl(ScriptService) {
     newComp.add = {};
 
     newComp.submit = function(){
-        ScriptService.createScript(newComp.add.title, newComp.add.id);
+        ScriptService.createScript(newComp.add.title, newComp.add.id)
+        .then(function(script) {
+          window.location.href = "/watch/" + script._id;
+        });
     };
 }
 

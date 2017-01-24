@@ -38,8 +38,13 @@ function ScriptService($http) {
 			  data: {
 					title: title
 				}
-	  };
-	    return $http(req);
+	  	};
+	    return $http(req).then(function(res) {
+				if (res.status !== 200) {
+					return [];
+				}
+				return res.data;
+			});
 	  },
 
 	  editScript: function(script) {
