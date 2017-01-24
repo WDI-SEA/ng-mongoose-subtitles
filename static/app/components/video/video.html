@@ -44,8 +44,10 @@
       <label>Save</label>
       <input type="submit" value="Submit">
     </form>
-    <button style="color: black" ng-click="videoComp.saveAs()" >Save As</button>
+
     <input style="color: black" type="Text" placeholder="New title" ng-model="videoComp.script.title"/>
+    <button style="color: black" ng-click="videoComp.saveAs()">Save As</button>
+    
     <br/>
     <div class="subtitle-edit-container">
       <div class="row" ng-repeat="subtitle in videoComp.script.subtitles">

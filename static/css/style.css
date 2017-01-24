@@ -5,6 +5,11 @@ body {
   margin: 0 25px;
 }
 
+h1 {
+  font-size: 42px;
+  margin-left: -2px;
+}
+
 .container {
   width: 100%
 }
@@ -60,6 +65,7 @@ input[name=line1] {
 }
 
 .navbar a {
+  margin-left: 12px;
   transition-property: color;
   transition-duration: 300ms;
 }
@@ -73,7 +79,8 @@ input[name=line1] {
 }
 
 #brand-logo {
-  width: 110px;
+  margin-top: 2px;
+  width: 100px;
 }
 
 /*** VIDEO STYLING ***/
@@ -151,8 +158,8 @@ input[name=line1] {
 /*** HOMEPAGE STYLING ***/
 
 #script-links {
-  width: 500px;
-  max-width: 84%;
+  width: 100%;
+  max-width: 750px;
 }
 
 .scripts-hr {
@@ -212,15 +219,29 @@ input[name=line1] {
   padding-left: 25px;
 }
 
-
-@media (max-width: 992px){
-  .subtitle-edit-container{
-    height: 50vh;
-    overflow: scroll;
-  }
-}
-
 #script-links a {
   color: white;
   text-decoration: none;
+}
+
+
+@media (max-width: 992px){
+
+  body {
+    margin: 15px;
+  }
+
+  .navbar-fixed-top {
+    padding-left: 15px;
+  }
+
+  .subtitle-edit-container {
+    height: 50vh;
+    overflow: scroll;
+  }
+
+  .navbar-toggle {
+    margin: 13px 30px 0 0;
+  }
+
 }
