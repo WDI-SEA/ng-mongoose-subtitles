@@ -2,6 +2,84 @@ var models = require('../models/subtitle');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/subtitles');
 
+var BLANK = [
+  {
+    duration: "00:00:00,380 --> 00:00:01,940",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:00:05,580 --> 00:00:07,670",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:00:09,230 --> 00:00:14,440",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:00:16,520 --> 00:00:21,210",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:00:22,250 --> 00:00:26,410",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:00:26,410 --> 00:00:28,500",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:00:28,500 --> 00:00:31,100",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:00:31,100 --> 00:00:36,310",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:00:36,830 --> 00:00:39,430",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:00:40,470 --> 00:00:42,550",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:00:46,720 --> 00:00:49,840",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:01:08,600 --> 00:01:14,320",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:01:14,850 --> 00:01:19,530",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:01:21,540 --> 00:01:25,180",
+    line1: "",
+    line2: "",
+  },
+  {
+    duration: "00:01:25,700 --> 00:01:28,300",
+    line1: "",
+    line2: "",
+  },
+];
+
 var ORIGINAL = [
   {
     duration: "00:00:00,380 --> 00:00:01,940",
@@ -235,6 +313,20 @@ var ORIGINAL3 = [
     line2: "-From Fulda."
   },
 ];
+
+models.Subtitle.findOne({
+  title: "blank"
+}, function(err, blank) {
+  if (!blank) {
+    models.Subtitle.create({
+      title: "blank",
+      subtitles: BLANK
+      }, function(err, subtitle) {
+
+      }
+    );
+  }
+});
 
 models.Subtitle.findOne({
   title: "original"
